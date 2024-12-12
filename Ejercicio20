@@ -1,0 +1,33 @@
+package tema8;
+import java.io.*;
+import java.util.*;
+
+//Crea un programa que pida números por consola y los guarde en una lista hasta que el usuario introduzca un -1.
+//El -1 no lo guardes en la lista
+//Al finalizar muéstralos seguidos por comas, sin la coma final
+//
+//En la clase funciones crea el método muestraListaInt para poder reutilizarlo más adelante 
+//Este método recibirá una lista de Strings y escribirá sus elementos todos seguidos separados por comas, sin la coma final
+
+
+public class Ejercicio20 {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner (System.in);
+		
+		List<Integer>lista = new ArrayList<Integer>();
+		boolean x = false;
+		
+		do {
+			int numero=Funciones.dimeEntero("Dime un numero", teclado);
+			lista.add(numero);
+			if (numero==-1) {
+				x=true;
+			}
+		} while (x==false);
+		
+		Funciones.muestraListaInt(lista);
+
+	}
+
+}
